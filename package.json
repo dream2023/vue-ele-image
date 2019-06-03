@@ -1,21 +1,38 @@
 {
   "name": "vue-ele-image",
+  "description": "对 element-ui image组件进一步封装, 使其更简单、易用",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build:lib": "vue build -t lib --name vue-ele-image -d ./dist/ ./src/index.js",
     "lint": "vue-cli-service lint"
   },
-  "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dream2023/vue-ele-image"
   },
+  "main": "dist/vue-ele-image.umd.min.js",
+  "homepage": "https://github.com/dream2023/vue-ele-image/",
+  "keywords": [
+    "vue-ele-image",
+    "element image",
+    "element-ui image",
+    "vue avatar",
+    "vue image",
+    "vue images",
+    "vue",
+    "vue 图片"
+  ],
+  "dependencies": {},
   "devDependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
     "@vue/cli-plugin-babel": "^3.8.0",
     "@vue/cli-plugin-eslint": "^3.8.0",
     "@vue/cli-service": "^3.8.0",
     "babel-eslint": "^10.0.1",
+    "element-ui": "^2.9.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.6.10"
