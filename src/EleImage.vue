@@ -9,6 +9,7 @@
     :style="styles"
     @error="handleError"
     @load="handleLoad"
+    class="vue-ele-image"
     v-if="computedSrc"
   >
     <template v-slot:placeholder>
@@ -86,7 +87,7 @@ export default {
       if (this.radius) {
         radius = this.radius
       } else {
-        radius = this.src ? '5px' : '50%'
+        radius = this.computedSrc ? '5px' : '50%'
       }
       return radius
     },
@@ -125,3 +126,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.vue-ele-image {
+  vertical-align: middle;
+}
+</style>

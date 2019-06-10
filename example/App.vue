@@ -24,13 +24,11 @@
       radius="50%"
     />
     <e-image
-      :customStyle="{verticalAlign: 'top'}"
       :size="100"
       class="demo"
       username="张超杰"
     />
     <e-image
-      :customStyle="{verticalAlign: 'top'}"
       :size="100"
       class="demo"
       username="zhang"
