@@ -5,7 +5,7 @@
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build:lib": "vue build -t lib --name vue-ele-image -d ./dist/ ./src/index.js",
+    "build": "vue build -t lib --name vue-ele-image -d ./dist/ ./src/index.js",
     "lint": "vue-cli-service lint"
   },
   "repository": {

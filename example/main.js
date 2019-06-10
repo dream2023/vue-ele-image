@@ -6,7 +6,12 @@ import ElImage from '../src/index'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
-Vue.use(ElImage)
+Vue.use(ElImage, {
+  lazy: true,
+  fit: 'cover',
+  color: '#ffffff',
+  backgroundColor: '#409EFF'
+})
 
 new Vue({
   render: h => h(App)
