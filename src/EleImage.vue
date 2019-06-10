@@ -5,11 +5,11 @@
     :lazy="computedLazy"
     :referrer-policy="referrerPolicy"
     :scrollContainer="scrollContainer"
-    :src="src"
+    :src="computedSrc"
     :style="styles"
     @error="handleError"
     @load="handleLoad"
-    v-if="src"
+    v-if="computedSrc"
   >
     <template v-slot:placeholder>
       <slot name="placeholder"/>
@@ -36,6 +36,7 @@ export default {
   props: {
     username: String,
     src: String,
+    defaultSrc: String,
     alt: String,
     fit: String,
     lazy: Boolean,
@@ -46,6 +47,7 @@ export default {
     radius: String,
     referrerPolicy: String,
     backgroundColor: String,
+    customStyle: Object,
     scrollContainer: [String, Object],
   },
   components: {
@@ -57,6 +59,9 @@ export default {
   computed: {
     globalParams () {
       return this.$EleImageParams || {}
+    },
+    computedSrc () {
+      return this.src || this.defaultSrc || this.globalParams.defaultSrc
     },
     computedLazy () {
       return this.lazy || this.globalParams.lazy
@@ -97,7 +102,7 @@ export default {
         styles.height = this.computedHeight + 'px'
       }
 
-      if (!this.src) {
+      if (!this.computedSrc) {
         if (this.computedColor) {
           styles.color = this.computedColor
         }
@@ -107,7 +112,7 @@ export default {
         }
       }
 
-      return styles
+      return Object.assign({}, styles, this.customStyle)
     }
   },
   methods: {

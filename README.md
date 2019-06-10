@@ -8,8 +8,8 @@
 ## 特点
 
 - 增加 avatar 模式
-- 可全局定义配置(lazy, fit)
-- 参数更简单(size, radius)
+- 可全局定义配置(lazy, fit 等)
+- 参数更简单(size, radius 等)
 - 保留所有 el-image 的特性
 
 !['ele-image'](./public/example.png)
@@ -30,11 +30,12 @@ npm install vue-ele-image --save
 // 全局 (推荐)
 import EleImage from 'vue-ele-image'
 
-// 可以配置全局默认值(配置可选)
+// 可以配置全局默认值(配置中每一项都是可选)
 Vue.use(EleImage, {
   fit: 'cover',
   lazy: true,
   color: '#fff',
+  defaultSrc: 'https://dwz.cn/QYY2qkts',
   backgroundColor: '#409EFF'
 })
 ```
@@ -79,13 +80,15 @@ export default {
 
 ```js
 props: {
-  username: String, // 当src为false时, avatar模式所显示的字符
+  username: String, // 当src不存在时, avatar模式所显示的字符
   color: String, // avatar模式下, 字体颜色
   backgroundColor: String, // avatar模式下, 背景色
   size: Number, // size相当于 width === height === size
   width: Number, // 如果给定width值, 会覆盖size值
   height: Number, // 如果给定height值, 会覆盖size值
   radius: String, // 圆角, 正常模式默认值 5px, 头像模式: 50%
+  defaultSrc: String, // 当src不存在时, 顶替src
+  customStyle: Object, // 自定义样式
   src: String, // 同官网
   alt: String, // 同官网
   fit: String, // 同官网

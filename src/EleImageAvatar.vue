@@ -141,6 +141,6 @@ export default {
 .ele-image--avatar {
   display: inline-block;
   text-align: center;
-  vertical-align: top;
+  vertical-align: middle;
 }
 </style>
