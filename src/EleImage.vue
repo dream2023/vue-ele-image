@@ -65,7 +65,7 @@ export default {
       return this.src || this.defaultSrc || this.globalParams.defaultSrc
     },
     computedLazy () {
-      return this.lazy || this.globalParams.lazy
+      return this.lazy != undefined ? this.lazy : this.globalParams.lazy
     },
     computedFit () {
       return this.fit || this.globalParams.fit

@@ -1,6 +1,7 @@
 <template>
   <div>
     <ele-image
+      :lazy="false"
       :size="100"
       :src="src"
       :width="200"
